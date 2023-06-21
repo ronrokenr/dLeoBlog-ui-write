@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--    <link rel="icon" href="<%= BASE_URL %>favicon.ico">-->
+    <link href="/favicon.ico" rel="icon">
+    <script src="/src/main.js" type="module"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<!--    // 徽章依赖-->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!--    <script src="https://unpkg.com/wavesurfer.js"></script>-->
+
+<!--    图标-->
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+    <title>LeoBlog 用文字连接世界</title>
+    <style>
+        [v-cloak] {
+            display: none !important;
+        }
+
+        #app {
+            overflow: hidden;
+            /*height: 100%;*/
+            /*width: 100vw;*/
+
+        }
+
+        html {
+            /*overflow: hidden;*/
+            /*width: 100vw;*/
+            /*font-size: 16px!important;*/
+
+
+        }
+
+        body {
+            /*width: 100vw;*/
+            /*height: 100%;*/
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* 修改进度条颜色 全局css文件中添加，也可以独立出一个css文件，在页面处单独引入*/
+        #nprogress .bar {
+            background: #4f46e4 !important;
+        }
+
+        :deep(p::selection) {
+
+            background: #4f46e5;
+
+            color: #fff;
+
+
+        }
+        :deep(p::-moz-selection) {
+
+            background: #4f46e5;
+
+            color: #fff;
+        }
+
+        .loader {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        .slider {
+            overflow: hidden;
+            background-color: white;
+            margin: 0 15px;
+            height: 80px;
+            width: 20px;
+            border-radius: 30px;
+            box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 30px #fff,
+            inset -5px -5px 10px rgba(0, 0, 255, 0.1),
+            inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .slider::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3), 0px 420px 0 400px #2697f3,
+            inset 0px 0px 0px rgba(0, 0, 0, 0.1);
+            animation: animate_2 2.5s ease-in-out infinite;
+            animation-delay: calc(-0.5s * var(--i));
+        }
+
+        @keyframes animate_2 {
+            0% {
+                transform: translateY(250px);
+                filter: hue-rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(250px);
+                filter: hue-rotate(180deg);
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<section class="loader">
+    <div style="--i:0" class="slider">
+    </div>
+    <div style="--i:1" class="slider">
+    </div>
+    <div style="--i:2" class="slider">
+    </div>
+    <div style="--i:3" class="slider">
+    </div>
+    <div style="--i:4" class="slider">
+    </div>
+</section>
+
+
+
+<div v-cloak id="app" class=""></div>
+</body>
+</html>
